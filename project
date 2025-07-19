@@ -1,0 +1,32 @@
+from random import randint
+player = input("Сделайте свой выбор, камень, ножницы или бумага")
+number = randint(1,3)
+if number == 1:
+    comp = "ножницы"
+elif number == 2:
+    comp = "камень"
+else:
+    comp = "бумага"
+print("Выбор игрока:",player,"Выбор компьютера:",comp)
+
+if comp == "камень":
+    if player == "камень":
+        print("Ничья")
+    elif player == "ножницы":
+        print("Победа компьютера")
+    else:
+        print("Победа игрока")
+elif comp == "бумага":
+    if player == "камень":
+        print("Победа компьютера")
+    elif player == "ножницы":
+        print("Победа игрока")
+    else:
+        print("Ничья")
+else:
+    if player == "камень":
+        print("Победа игрока")
+    elif player == "ножницы":
+        print("Ничья")
+    else:
+        print("Победа компьютера")
