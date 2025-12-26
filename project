@@ -1,40 +1,39 @@
-from random import randint
-print("Добро пожаловать в игру 'Камень Ножницы Бумага'")
-print("Правила игры:\nБумага бьет камень\nКамень бьет ножницы\nНожницы бьют бумагу")
-choice = input("Хотите начать игру?\nВыберите да или нет\n").lower()
-while choice != "нет":
-    player = input("Сделайте свой выбор, камень, ножницы или бумага").lower()
-    if not (player == "камень" or player == "ножницы" or player == "бумага"):
-        print("Я тебя не понимаю")
-        continue
-    number = randint(1,3)
-    if number == 1:
-        comp = "ножницы"
-    elif number == 2:
-        comp = "камень"
+import random
+comp = random.randint(1,3)
+if comp == 1:
+    computer = "камень"
+elif comp == 2:
+    computer = "ножницы"
+elif comp == 3:
+    computer = "бумага"
+
+player = input("Ваш ход: ").lower()
+print("Выбор компьютера:",computer,"Выбор игрока: ",player)
+print("-----------Результат-------------")
+if computer == "камень":
+    if player == "камень":
+        print("ничья")
+    elif player == "ножницы":
+        print("поражение")
+    elif player == "бумага":
+        print("победа")
     else:
-        comp = "бумага"
-    print("Выбор игрока:",player,"Выбор компьютера:",comp)
-    
-    if comp == "камень":
-        if player == "камень":
-            print("Ничья")
-        elif player == "ножницы":
-            print("Победа компьютера")
-        else:
-            print("Победа игрока")
-    elif comp == "бумага":
-        if player == "камень":
-            print("Победа компьютера")
-        elif player == "ножницы":
-            print("Победа игрока")
-        else:
-            print("Ничья")
+        print("Ты читер!!!!!")
+elif computer == "ножницы":
+    if player == "камень":
+        print("победа")
+    elif player == "ножницы":
+        print("ничья")
+    elif player == "бумага":
+        print("поражение")
     else:
-        if player == "камень":
-            print("Победа игрока")
-        elif player == "ножницы":
-            print("Ничья")
-        else:
-            print("Победа компьютера")
-    choice = input("Хотите продолжить игру?\nВыберите да или нет\n").lower()
+        print("Ты читер!!!!!")
+else:
+    if player == "камень":
+        print("поражение")
+    elif player == "ножницы":
+        print("победа")
+    elif player == "бумага":
+        print("ничья")
+    else:
+        print("Ты читер!!!!!")
