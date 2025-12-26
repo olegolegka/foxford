@@ -3,7 +3,58 @@ comp = random.randint(1,3)
 if comp == 1:
     computer = "камень"
 elif comp == 2:
-    computer = "ножницы"
+    computer = "ножницы"import random
+print('Добро пожаловать в игру "Камень, ножницы, бумага"')
+print("""Правила игры:
+Камень бьет ножницы
+Ножницы бьют бумагу
+Бумага бьет камень
+В игре 3 попытки, выигрывает тот кто наберет больше очков
+Начинаем игру!!!!""")
+
+round = 0
+while round != 3:
+    round +=1
+    print(round,"раунд!!!!!")
+    comp = random.randint(1,3)
+
+    if comp == 1:
+        computer = "камень"
+    elif comp == 2:
+        computer = "ножницы"
+    elif comp == 3:
+        computer = "бумага"
+
+    player = input("Ваш ход: ").lower()
+    print("Выбор компьютера:",computer,"Выбор игрока: ",player)
+    print("-----------Результат-------------")
+    if computer == "камень":
+        if player == "камень":
+            print("ничья")
+        elif player == "ножницы":
+            print("поражение")
+        elif player == "бумага":
+            print("победа")
+        else:
+            print("Ты читер!!!!!")
+    elif computer == "ножницы":
+        if player == "камень":
+            print("победа")
+        elif player == "ножницы":
+            print("ничья")
+        elif player == "бумага":
+            print("поражение")
+        else:
+            print("Ты читер!!!!!")
+    else:
+        if player == "камень":
+            print("поражение")
+        elif player == "ножницы":
+            print("победа")
+        elif player == "бумага":
+            print("ничья")
+        else:
+            print("Ты читер!!!!!")
 elif comp == 3:
     computer = "бумага"
 
